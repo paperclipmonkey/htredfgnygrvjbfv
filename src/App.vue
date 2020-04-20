@@ -29,10 +29,25 @@ export default {
 }
 </script>
 <style>
-* {
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-}
-.aside {
-  border-left: 1px solid rgb(160, 160, 160);
-}
+  * {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  }
+
+  .danger {
+    color: red;
+  }
+
+  .success {
+    color: green;
+  }
+
+  /* 90s style */
+  .aside {
+    border-left: 10px solid transparent;
+    border-image: url('assets/border.png') 30 round;
+  }
+  body {
+    background: #000;
+    color: #FFF;
+  }
 </style>

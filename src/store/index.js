@@ -25,9 +25,15 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    addTransaction () {}
+    ADDTRANSACTION (state, transaction) {
+      state.transactions.push(transaction)
+    }
   },
   actions: {
+    addTransaction ({ commit, state }, transaction) {
+      transaction.value = transaction.value * 100 // Back to pence
+      commit('ADDTRANSACTION', transaction)
+    }
   },
   getters: {
     currentBalance (state) {
@@ -35,6 +41,10 @@ export default new Vuex.Store({
       return state.transactions.reduce((prev, cur) => {
         return prev + cur.value
       }, 0)
+    },
+    orderedTransactions (state) {
+      // Use current balance plus overdraft to get avaiable balance
+      return state.transactions.slice().sort((a, b) => b.date - a.date)
     },
     availableBalance (state, getters) {
       // Use current balance plus overdraft to get avaiable balance
