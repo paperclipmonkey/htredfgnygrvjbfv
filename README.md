@@ -26,5 +26,7 @@ yarn serve
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## TODO
+
+* Add tests
+* Make it even more 90s
